@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header-title">
+            <h1 class="title">Find LRC</h1>
+            <p class="subtitle">Find lyrics from spotify</p>
+        </div>
+
+        <div class="inputs">
+            <input type="url" id="input" name="url" class="input-box" placeholder="input spotify track url">
+            <a onclick="findLRC()" class="submit-btn">Submit</a>
+        </div>
+
+        <div class="trogle-btn">
+            <p class="synced-text">syncronize</p>
+            <label class="switch">
+                <input type="checkbox" checked id="chexkbox">
+                <span class="slider round"></span>
+            </label>
+            <div class="coppy">
+                <a onclick="copy()">Coppy</a>
+            </div>
+        </div>
+
+        <div id="container" class="lyrics"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

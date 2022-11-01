@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(14,26,66,1);
+}
+
+.container {
+    max-width: 1100px;
+    padding: 1em 2em;
+    margin: 0 auto;
+}
+
+.title {
+    color: #fff;
+}
+
+.subtitle {
+    color: rgb(216, 216, 216);
+}
+
+.inputs {
+    margin: 1em 0;
+    display: flex;
+}
+
+input[type=url] {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-right: 1em;
+}
+
+.submit-btn {
+    padding: 0.5em 0.5em;
+    cursor: pointer;
+    border: 2px solid #fff;
+    color: #fff;
+    /* background: #fff; */
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.lyrics {
+    color: #fff;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .2s;
+    transition: .2s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.trogle-btn {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.synced-text {
+    color: rgb(216, 216, 216);
+    margin-right: 0.5em;
+}
+
+.display {
+    display: none;
+}
+
