@@ -1,6 +1,8 @@
 function findLRC() {
     document.getElementById('container').innerHTML = ''
     lrc = [];
+    synced = [];
+    nonSynced = [];
 
     lrc.length = 0;
     ur = document.getElementById('input').value;
@@ -26,7 +28,22 @@ function findLRC() {
                     document.getElementById('container').innerHTML += '<span class="timeline">' + '[' + JSON.stringify(m[key].timeTag).replace(/"/g, '') + ']' + '</span>' + JSON.stringify(m[key].words).replace(/"/g, '') + "<br>";
                 }
 
+                for (const key in m) {
+                    b = JSON.stringify(m[key].timeTag).replace(/"/g, '');
+                    c = JSON.stringify(m[key].words).replace(/"/g, '');
+                    synced.push(`[${b}]${c}`);
+                }
+
+                for (const key in m) {
+                    c = JSON.stringify(m[key].words).replace(/"/g, '');
+                    nonSynced.push(`${c}`);
+                }
+
             });
+
+            console.log(synced);
+
+
         })
         .catch(err => { document.getElementById('container').innerHTML = 'Spotify track not found or invalid url' });
 
@@ -38,9 +55,21 @@ checkbox = document.getElementById('chexkbox');
 checkbox.addEventListener('change', function () {
     if (this.checked) {
         document.querySelectorAll('.timeline').forEach(el=>el.classList.remove('display'));
+        document.getElementById('copy_btn').removeAttribute("onclick");
+        document.getElementById('copy_btn').setAttribute("onclick", "S_coppy()");
         console.log('checked')
     } else {
         document.querySelectorAll('.timeline').forEach(el=>el.classList.add('display'));
+        document.getElementById('copy_btn').removeAttribute("onclick");
+        document.getElementById('copy_btn').setAttribute("onclick", "N_coppy()");
         console.log('unchecked')
     }
 });
+
+function S_coppy() {
+    navigator.clipboard.writeText(synced.join('\n'));
+}
+
+function N_coppy() {
+    navigator.clipboard.writeText(nonSynced.join('\n'));
+}
