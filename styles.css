@@ -92,7 +92,7 @@ input[type=url] {
 }
 
 input:checked+.slider {
-  background-color: #2196F3;
+  background-color: #6f6f6f;
 }
 
 input:focus+.slider {
