@@ -53,23 +53,28 @@ function findLRC() {
 checkbox = document.getElementById('chexkbox');
 
 checkbox.addEventListener('change', function () {
+    copy_btn = document.getElementById('copy_btn');
     if (this.checked) {
         document.querySelectorAll('.timeline').forEach(el=>el.classList.remove('display'));
-        document.getElementById('copy_btn').removeAttribute("onclick");
-        document.getElementById('copy_btn').setAttribute("onclick", "S_coppy()");
+        copy_btn.removeAttribute("onclick");
+        copy_btn.setAttribute("onclick", "S_copy()");
         console.log('checked')
     } else {
         document.querySelectorAll('.timeline').forEach(el=>el.classList.add('display'));
-        document.getElementById('copy_btn').removeAttribute("onclick");
-        document.getElementById('copy_btn').setAttribute("onclick", "N_coppy()");
+        copy_btn.removeAttribute("onclick");
+        copy_btn.setAttribute("onclick", "N_copy()");
         console.log('unchecked')
     }
 });
 
-function S_coppy() {
+function S_copy() {
     navigator.clipboard.writeText(synced.join('\n'));
 }
 
-function N_coppy() {
+function N_copy() {
     navigator.clipboard.writeText(nonSynced.join('\n'));
+}
+
+function copied() {
+    document.getElementById('copy_btn').innerHTML = 'copied!'
 }
