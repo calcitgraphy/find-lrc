@@ -58,12 +58,10 @@ checkbox.addEventListener('change', function () {
         document.querySelectorAll('.timeline').forEach(el=>el.classList.remove('display'));
         copy_btn.removeAttribute("onclick");
         copy_btn.setAttribute("onclick", "S_copy()");
-        console.log('checked')
     } else {
         document.querySelectorAll('.timeline').forEach(el=>el.classList.add('display'));
         copy_btn.removeAttribute("onclick");
         copy_btn.setAttribute("onclick", "N_copy()");
-        console.log('unchecked')
     }
 });
 
